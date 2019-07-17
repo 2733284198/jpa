@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <!--必须配置persistence-unit节点-->
+    <persistence-unit name="myJpa" transaction-type="RESOURCE_LOCAL">
+        <!--jpa实现方式-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--配置实体类-->
+        <class>com.lxf.User</class>
+        <properties>
+            <!--数据库信息-->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="crystal1024"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/study?serverTimezone=GMT"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+            <!--jpa实现方的配置信息-->
+            <!--日志显示sql语句-->
+            <property name="hibernate.show_sql" value="true"/>
+            <!--
+            自动创建数据库的方式：
+                create：程序运行时创建数据库表，如果表存在，先删除再创建
+                update：程序运行时创建数据库表，如果表存在，不会创建，表有改动的话会更新
+                none：不会创建表
+            -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
