@@ -1,5 +1,6 @@
 package com.lxf.test;
 
+import com.lxf.User;
 import com.lxf.util.JPAUtil;
 import org.junit.Test;
 
@@ -19,6 +20,11 @@ public class JpaQueryTest {
             //查询全部
             String jpql = "from User";
             Query query = entityManager.createQuery(jpql);
+            query.setFirstResult(1);
+            query.setMaxResults(10);
+//            Query query = entityManager.createNamedQuery("queryName");
+
+//            Query query = entityManager.createNativeQuery("select count(id) from user");
             List resultList = query.getResultList();
             resultList.forEach(new Consumer() {
                 @Override
