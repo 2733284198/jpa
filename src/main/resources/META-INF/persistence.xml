@@ -6,6 +6,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--配置实体类-->
         <class>com.lxf.User</class>
+        <class>com.lxf.School</class>
+        <class>com.lxf.Student</class>
         <properties>
             <!--数据库信息-->
             <property name="javax.persistence.jdbc.user" value="root"/>

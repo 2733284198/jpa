@@ -38,6 +38,12 @@
             </bean>
         </property>
 
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+
         <!--jpa方言:高级特性-->
 
     </bean>
