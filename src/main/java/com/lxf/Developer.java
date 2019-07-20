@@ -14,7 +14,10 @@ public class Developer {
     @Column
     private String name;
 
-    @ManyToMany(targetEntity = Language.class)
+    @ManyToMany(targetEntity = Language.class,cascade = CascadeType.ALL)
+    @JoinTable(name = "middle_develop_language",
+            joinColumns = @JoinColumn(name = "develop_id", referencedColumnName = "developerId"),
+            inverseJoinColumns = @JoinColumn(name = "language_id", referencedColumnName = "languageId"))
     private List<Language> languages = new ArrayList<>();
 
     @Override

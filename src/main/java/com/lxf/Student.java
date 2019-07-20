@@ -18,7 +18,7 @@ public class Student {
     @Column(name = "school_id",insertable = false,updatable = false)//外键字段
     private Integer schoolId;
 
-    @ManyToOne(targetEntity = School.class,cascade = CascadeType.ALL)//配置多对一关系
+    @ManyToOne(targetEntity = School.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)//配置多对一关系
     @JoinColumn(name = "school_id",referencedColumnName = "schoolId")//配置外键
     private School school;
 

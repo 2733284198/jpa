@@ -14,8 +14,11 @@ public class Language {
     @Column
     private String des;
 
-    @ManyToMany(targetEntity = Developer.class)
-    @JoinTable()
+//    @ManyToMany(targetEntity = Developer.class)
+//    @JoinTable(name = "middle_develop_language",
+//            joinColumns = @JoinColumn(name = "language_id", referencedColumnName = "languageId"),
+//            inverseJoinColumns = @JoinColumn(name = "develop_id", referencedColumnName = "developerId"))
+    @ManyToMany(mappedBy = "languages")
     private List<Developer> developers = new ArrayList<>();
 
     @Override

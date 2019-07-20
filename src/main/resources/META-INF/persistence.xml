@@ -8,6 +8,8 @@
         <class>com.lxf.User</class>
         <class>com.lxf.School</class>
         <class>com.lxf.Student</class>
+        <class>com.lxf.Developer</class>
+        <class>com.lxf.Language</class>
         <properties>
             <!--数据库信息-->
             <property name="javax.persistence.jdbc.user" value="root"/>

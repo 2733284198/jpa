@@ -26,7 +26,6 @@ public class School {
                 "schoolId=" + schoolId +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", students=" + students +
                 '}';
     }
 
